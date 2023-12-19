@@ -3,27 +3,27 @@ import { motion } from 'framer-motion'
 
 const  workData = [
     {
-        year: "2021-2023",
-        header: "Bridge Mobile",
-        param: "Lorem ipsum dolor sit amet consectetur. Sed id dignissim tincidunt amet amet at. Enim pretium neque at orci. Enim sapien vel in amet risus massa semper quam. Quis interdum eu sapien mollis enim ipsum nulla",
+        year: "2022-Present",
+        header: "Software Developer",
+        param: "Exbrain Technology is a leading software house specializing in Website Development, Mobile Development and Website Hosting.",
         languages: ["React Native", "Restful API"]
     },
     {
-        year: "2021-2023",
-        header: "HR Management",
-        param: "Lorem ipsum dolor sit amet consectetur. Sed id dignissim tincidunt amet amet at. Enim pretium neque at orci. Enim sapien vel in amet risus massa semper quam. Quis interdum eu sapien mollis enim ipsum nulla",
+        year: "2021-2022",
+        header: "Web Developer",
+        param: "Exbrain Education is a training center that functions as a school for students, offering comprehensive instruction in various areas of software development, including Java, JavaScript, PHP, Laravel, Vue, and more",
         languages: ["React Native", "Restful API"]
     }
 ]
 
 const  schoolData = [
     {
-        year: "2021-2023",
+        year: "2022-Present",
         header: "Bridge Mobile",
         param: "Lorem ipsum dolor sit amet consectetur. Sed id dignissim tincidunt amet amet at. Enim pretium neque at orci. Enim sapien vel in amet risus massa semper quam. Quis interdum eu sapien mollis enim ipsum nulla",
     },
     {
-        year: "2021-2023",
+        year: "2021-2022",
         header: "HR Management",
         param: "Lorem ipsum dolor sit amet consectetur. Sed id dignissim tincidunt amet amet at. Enim pretium neque at orci. Enim sapien vel in amet risus massa semper quam. Quis interdum eu sapien mollis enim ipsum nulla",
     }
@@ -55,11 +55,11 @@ const ExperienceItemVariants = {
 
 const Resume = () => {
     return (
-        <section className='w-full h-screen bg-black text-white'>
+        <section className='w-full h-auto py-20 bg-black text-white'>
             {/* Start Header */}
-            <div className='text-center pt-14'>
-                <p className='text-[40px] font-bold mb-3'>Resume</p>
-                <p className='text-sm'>Lorem ipsum dolor sit amet consectetur. Nullam sem semper venenatis gravida lobortis viverra. Aenean integer sit etiam nec.</p>
+            <div className='text-center'>
+                <p className='text-5xl font-bold mb-3 text-red-500'>Resume</p>
+                <p className='text-xl'>Lorem ipsum dolor sit amet consectetur. Nullam sem semper venenatis gravida lobortis viverra. Aenean integer sit etiam nec.</p>
             </div>
             {/* End Header */}
 
@@ -68,18 +68,18 @@ const Resume = () => {
                 {/* start work */}
                 <div className='col-start-2 col-span-5'>
                     <div>
-                        <motion.p className='text-lg font-bold tracking-wide my-8' variants={ExperienceVariants} initial="hide" whileInView="show">Work Experience</motion.p>
+                        <motion.p className='text-xl font-bold tracking-wide my-8' variants={ExperienceVariants} initial="hide" whileInView="show">Work Experience</motion.p>
 
                         {
                             workData.map(w => (
                                 <motion.div className='w-full flex mb-10' key={w.header} variants={ExperienceVariants} initial="hide" whileInView="show">
-                                    <motion.p className='w-1/5' variants={ExperienceItemVariants}>{w.year}</motion.p>
+                                    <motion.p className='w-1/5 text-xl' variants={ExperienceItemVariants}>{w.year}</motion.p>
 
                                     <motion.div className='w-4/6' variants={ExperienceItemVariants}>
-                                        <p className='text-lg text-red-600 font-bold'>{w.header}</p>
-                                        <p className='text-sm text-justify my-3'>{w.param}</p>
+                                        <p className='text-xl text-red-500 font-bold'>{w.header}</p>
+                                        <p className='text-lg text-justify my-3'>{w.param}</p>
                                         {
-                                            w.languages.map(language => <button className='text-sm font-bold bg-red-600 text-white mr-4 py-1 px-4 rounded-lg'>{language}</button>)
+                                            w.languages.map(language => <button className='text-sm font-bold bg-red-500 text-white mr-4 py-1 px-4 rounded-lg'>{language}</button>)
                                         }
                                     </motion.div>
                                 </motion.div>
@@ -97,11 +97,11 @@ const Resume = () => {
                         {
                             schoolData.map(w => (
                                 <motion.div className='w-full flex mb-10' key={w.header} variants={ExperienceVariants} initial="hide" whileInView="show">
-                                    <motion.p className='w-1/5' variants={ExperienceItemVariants}>{w.year}</motion.p>
+                                    <motion.p className='w-1/5 text-xl' variants={ExperienceItemVariants}>{w.year}</motion.p>
 
                                     <motion.div className='w-4/6' variants={ExperienceItemVariants}>
-                                        <p className='text-lg text-red-600 font-bold'>{w.header}</p>
-                                        <p className='text-sm text-justify my-3'>{w.param}</p>
+                                        <p className='text-xl text-red-500 font-bold'>{w.header}</p>
+                                        <p className='text-lg text-justify my-3'>{w.param}</p>
                                     </motion.div>
                                 </motion.div>
                             ))
