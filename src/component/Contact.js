@@ -3,6 +3,8 @@ import git from "../assets/github.png"
 import linkin from "../assets/linkin.png"
 import facebook from "../assets/facebook.png"
 import instgram from "../assets/instgram.png"
+import email from "../assets/footeremail.png"
+import phone from "../assets/phone.png"
 
 const Contact = () => {
     return (
@@ -43,15 +45,15 @@ const Contact = () => {
 
                         <div className='col-span-5 self-center'>
                             <div className='flex justify-between'>
-                                <div className='bg-[#3B3B3B] px-5 py-2'> heinthu@gmail.com</div>
-                                <div className='bg-[#3B3B3B] px-5 py-2'> +959779368682</div>
+                                <div className='bg-[#3B3B3B] px-5 py-2'><img src={email} className='w-8 inline-block mr-5' alt="email"/> heinthu@gmail.com</div>
+                                <div className='bg-[#3B3B3B] px-5 py-2'><img src={phone} className='w-6 inline-block mr-5' alt="phone"/> +959779368682</div>
                             </div>
 
-                            <ul className='inline-flex mx-auto mt-8 bg-red-800'>
-                                <li className='mr-6'><img src={git} className='w-8' alt="github"/></li>
-                                <li className='mr-6'><img src={linkin} className='w-8' alt="linkin"/></li>
-                                <li className='mr-6'><img src={facebook} className='w-8' alt="facebook"/></li>
-                                <li className='mr-6'><img src={instgram} className='w-8' alt="instgram"/></li>
+                            <ul className='flex justify-center mx-auto mt-10'>
+                                <li className='mr-8'><img src={git} className='w-8' alt="github"/></li>
+                                <li className='mr-8'><img src={linkin} className='w-8' alt="linkin"/></li>
+                                <li className='mr-8'><img src={facebook} className='w-8' alt="facebook"/></li>
+                                <li className='mr-8'><img src={instgram} className='w-8' alt="instgram"/></li>
                             </ul>
                         </div>
                     </div>
