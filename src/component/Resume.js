@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const  workData = [
     {
@@ -26,7 +27,31 @@ const  schoolData = [
         header: "HR Management",
         param: "Lorem ipsum dolor sit amet consectetur. Sed id dignissim tincidunt amet amet at. Enim pretium neque at orci. Enim sapien vel in amet risus massa semper quam. Quis interdum eu sapien mollis enim ipsum nulla",
     }
-]
+];
+
+const ExperienceVariants = {
+    hide: {
+        y: "100%", 
+        opacity: 0
+    },
+    show: {
+        y: 0, 
+        opacity: 1, 
+        transition: { duration: 0.5, staggerChildren: 0.5, when: "beforeChildren"}
+    }
+};
+
+const ExperienceItemVariants = {
+    hide: {
+        y: "50%",
+        opacity: 0
+    },
+    show: {
+        y: 0,
+        opacity: 1,
+        transition: { duration: 0.5}
+    }
+}
 
 const Resume = () => {
     return (
@@ -39,25 +64,25 @@ const Resume = () => {
             {/* End Header */}
 
             {/* Start Experience */}
-            <div className='flex mt-10'>
+            <div className='grid grid-cols-11 mt-10'>
                 {/* start work */}
-                <div className='w-1/2 flex justify-center items-center'>
-                    <div className='w-3/4 ml-24'>
-                        <p className='text-lg font-bold tracking-wide my-8'>Work Experience</p>
+                <div className='col-start-2 col-span-5'>
+                    <div>
+                        <motion.p className='text-lg font-bold tracking-wide my-8' variants={ExperienceVariants} initial="hide" whileInView="show">Work Experience</motion.p>
 
                         {
                             workData.map(w => (
-                                <div className='w-full flex mb-10' key={w.header}>
-                                    <p className='w-1/5'>{w.year}</p>
+                                <motion.div className='w-full flex mb-10' key={w.header} variants={ExperienceVariants} initial="hide" whileInView="show">
+                                    <motion.p className='w-1/5' variants={ExperienceItemVariants}>{w.year}</motion.p>
 
-                                    <div className='w-5/6'>
+                                    <motion.div className='w-4/6' variants={ExperienceItemVariants}>
                                         <p className='text-lg text-red-600 font-bold'>{w.header}</p>
                                         <p className='text-sm text-justify my-3'>{w.param}</p>
                                         {
                                             w.languages.map(language => <button className='text-sm font-bold bg-red-600 text-white mr-4 py-1 px-4 rounded-lg'>{language}</button>)
                                         }
-                                    </div>
-                                </div>
+                                    </motion.div>
+                                </motion.div>
                             ))
                         }
                     </div>
@@ -65,20 +90,20 @@ const Resume = () => {
                 {/* end work */}
 
                 {/* start education */}
-                <div className='w-1/2 flex justify-center items-start'>
-                    <div className='w-3/4'>
-                        <p className='text-lg font-bold tracking-wide my-8'>Bachelor & Certificates</p>
+                <div className='col-span-5 pr-2'>
+                    <div>
+                        <motion.p className='text-lg font-bold tracking-wide my-8' variants={ExperienceVariants} initial="hide" whileInView="show">Bachelor & Certificates</motion.p>
 
                         {
                             schoolData.map(w => (
-                                <div className='w-full flex mb-10' key={w.header}>
-                                    <p className='w-1/5'>{w.year}</p>
+                                <motion.div className='w-full flex mb-10' key={w.header} variants={ExperienceVariants} initial="hide" whileInView="show">
+                                    <motion.p className='w-1/5' variants={ExperienceItemVariants}>{w.year}</motion.p>
 
-                                    <div className='w-5/6'>
+                                    <motion.div className='w-4/6' variants={ExperienceItemVariants}>
                                         <p className='text-lg text-red-600 font-bold'>{w.header}</p>
                                         <p className='text-sm text-justify my-3'>{w.param}</p>
-                                    </div>
-                                </div>
+                                    </motion.div>
+                                </motion.div>
                             ))
                         }
                     </div>

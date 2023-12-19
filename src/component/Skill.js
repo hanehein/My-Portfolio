@@ -63,11 +63,10 @@ const languages = [
     }
 ];
 
-const skill = 10;
 
 const Skill = () => {
     return (
-        <section  className='w-full h-screen bg-stone-900 text-white'>
+        <section  className='w-full h-screen bg-black/90 text-white'>
             {/* Start Header */}
             <div className='text-center pt-14'>
                 <p className='text-[40px] font-bold mb-3'>Professional <span className='text-red-500'>SkillSet</span></p>
@@ -89,17 +88,12 @@ const Skill = () => {
                                     <div className={styles.knowledgePercentage}>
                                         <span className='text-[10px]'>{language.knowledge} %</span>
                                         
-                                        <div className='bg-red-800'>
-                                            <div className='w-[10px] h-[1px] bg-white rounded-lg mb-[1px] mx-auto'></div>
-                                            <div className='w-[10px] h-[1px] bg-white rounded-lg mb-[1px] mx-auto'></div>
-                                            <div className='w-[10px] h-[1px] bg-white rounded-lg mb-[1px] mx-auto'></div>
-                                            <div className='w-[10px] h-[1px] bg-white rounded-lg mb-[1px] mx-auto'></div>
-                                            <div className='w-[10px] h-[1px] bg-white rounded-lg mb-[1px] mx-auto'></div>
-                                            <div className='w-[10px] h-[1px] bg-white rounded-lg mb-[1px] mx-auto'></div>
-                                            <div className='w-[10px] h-[1px] bg-white rounded-lg mb-[1px] mx-auto'></div>
-                                            <div className='w-[10px] h-[1px] bg-white rounded-lg mb-[1px] mx-auto'></div>
-                                            <div className='w-[10px] h-[1px] bg-white rounded-lg mb-[1px] mx-auto'></div>
-                                            <div className='w-[10px] h-[1px] bg-white rounded-lg mb-[1px] mx-auto'></div>
+                                        <div>
+                                            <div className='w-[15px] h-[3px] bg-white rounded-lg mb-1 mx-auto'></div>
+                                            <div className='w-[15px] h-[3px] bg-[#DF4F4F] rounded-lg mb-1 mx-auto'></div>
+                                            <div className='w-[15px] h-[3px] bg-[#DF4F4F] rounded-lg mb-1 mx-auto'></div>
+                                            <div className='w-[15px] h-[3px] bg-[#DF4F4F] rounded-lg mb-1 mx-auto'></div>
+                                            <div className='w-[15px] h-[3px] bg-[#DF4F4F] rounded-lg mb-1 mx-auto'></div>
                                         </div>
                                     </div>
                                 </div>
@@ -113,10 +107,10 @@ const Skill = () => {
             {/* End languae */}
 
             {/* Start stack */}
-            <div className='grid grid-cols-12 gap-4 mt-20'>
-                <div className='col-start-2 col-span-4'>
+            <div className='grid grid-cols-11 gap-10 mt-20'>
+                <div className='col-start-2 col-span-5'>
                     {/* start header */}
-                    <div className='flex justify-between items-center'>
+                    <div className='w-3/4 flex justify-between items-center'>
                         <p className='text-lg font-bold underline underline-offset-4 decoration-2 decoration-red-500'>VILT Stack</p>
 
                         <div className='flex'>
@@ -129,13 +123,13 @@ const Skill = () => {
                     {/* end header */}
 
                     {/* start body */}
-                    <p className='mt-5 text-sm text-justify'>Vue.js, Inertia.js, Laravel, and Tailwind CSS, I develop high-quality web applications with seamless functionality and user-friendly interfaces.</p>
+                    <p className='w-3/4 mt-5 text-sm text-justify'>Vue.js, Inertia.js, Laravel, and Tailwind CSS, I develop high-quality web applications with seamless functionality and user-friendly interfaces.</p>
                     {/* end body */}
                 </div>
                 
-                <div className='col-start-8 col-span-4'>
+                <div className='col-span-5'>
                     {/* start header */}
-                    <div className='flex justify-between items-center'>
+                    <div className='w-3/4 flex justify-between items-center'>
                         <p className='text-lg font-bold underline underline-offset-4 decoration-2 decoration-red-500'>MERN Stack</p>
 
                         <div className='flex'>
@@ -148,7 +142,7 @@ const Skill = () => {
                     {/* end header */}
 
                     {/* start body */}
-                    <p className='mt-5 text-sm text-justify'>Experienced in MERN stack (MongoDB, Express.js, React.js, Node.js) development, I craft dynamic and responsive web applications, ensuring seamless integration and optimal performance across the entire stack.</p>
+                    <p className='w-3/4 mt-5 text-sm text-justify'>Experienced in MERN stack (MongoDB, Express.js, React.js, Node.js) development, I craft dynamic and responsive web applications, ensuring seamless integration and optimal performance across the entire stack.</p>
                     {/* end body */}
                 </div>
             </div>
