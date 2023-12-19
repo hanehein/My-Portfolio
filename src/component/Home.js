@@ -6,6 +6,31 @@ import linkin from "../assets/linkin.png"
 import facebook from "../assets/facebook.png"
 import instgram from "../assets/instgram.png"
 import vector from  "../assets/Vector.png"
+import { motion } from 'framer-motion'
+
+const homeVariants = {
+    hide: {
+        x: "100%",
+        opacity: 0
+    },
+    show: {
+        x: "40%",
+        opacity: 1,
+        transition: {duration: 0.5, delayChildren: 0.5, staggerChildren: 0.8, when: "beforeChildren" }
+    }
+}
+
+const dataVariants = {
+    hide: {
+        x: "50%",
+        opacity:0
+    },
+    show : {
+        x: 0,
+        opacity: 1, 
+        transition: { duration: 0.5 }
+    }
+}
 
 const Home = () => {
     return (
@@ -18,19 +43,19 @@ const Home = () => {
                 </div>
                 {/* End Header */}
 
-                <div className='absolute left-1/4 top-1/2 -translate-y-1/2'>
-                    <p className={`${styles.para1} text-[55px] font-bold mb-1`}>Hello, I'm <span className='text-red-600'>Hein Thu</span>.</p>
-                    <p className='text-[35px]'>"I'm Software Developer."</p>
+                <motion.div className='absolute top-1/3 -translate-y-1/2' variants={homeVariants} initial="hide" animate="show">
+                    <motion.p variants={dataVariants} className={`${styles.para1} text-[55px] font-bold mb-1`}>Hello, I'm <span className='text-red-600'>Hein Thu</span>.</motion.p>
+                    <motion.p variants={dataVariants}  className='text-[35px]'>"I'm Software Developer."</motion.p>
 
-                    <ul className='flex my-7'>
+                    <motion.ul variants={dataVariants}  className='flex my-7'>
                         <li className='mr-6'><img src={git} className='w-7 h-7' alt="github"/></li>
                         <li className='mr-6'><img src={linkin} className='w-7 h-7' alt="linkin"/></li>
                         <li className='mr-6'><img src={facebook} className='w-7 h-7' alt="facebook"/></li>
                         <li className='mr-6'><img src={instgram} className='w-7 h-7' alt="instgram"/></li>
-                    </ul>
+                    </motion.ul>
 
-                    <button className='text-lg border-2 border-red-600 px-5 py-2'>View My Work <img src={vector} className='inline-block w-4 h-4 ml-4' alt="vector"/></button>
-                </div>
+                    <motion.button variants={dataVariants}  className='text-lg border-2 border-red-600 px-5 py-2'>View My Work <img src={vector} className='inline-block w-4 h-4 ml-4' alt="vector"/></motion.button>
+                </motion.div>
             </div>
         </section>
     )
