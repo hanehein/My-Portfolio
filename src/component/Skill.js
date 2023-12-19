@@ -67,7 +67,7 @@ const skill = 10;
 
 const Skill = () => {
     return (
-        <section  className='w-full h-screen bg-black text-white'>
+        <section  className='w-full h-screen bg-stone-900 text-white'>
             {/* Start Header */}
             <div className='text-center pt-14'>
                 <p className='text-[40px] font-bold mb-3'>Professional <span className='text-red-500'>SkillSet</span></p>
