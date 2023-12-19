@@ -1,0 +1,16 @@
+.knowledgePercentage span{
+    font-size: 10px;
+}
+
+.knowledgePercentage ul > li{
+    width: 10px;
+    height: 1px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 0.5px;
+    margin: 0 auto;
+}
+
+/* .percentage{
+    ba
+} */
