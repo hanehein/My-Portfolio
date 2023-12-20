@@ -8,7 +8,7 @@ import phone from "../assets/phone.png"
 
 const Contact = () => {
     return (
-        <footer className='w-full h-[80vh] text-white bg-black'> 
+        <footer className='w-full h-[80vh] text-white bg-black/90'> 
             {/* Start Header */}
             <div className='text-center pt-14'>
                 <p className='text-[40px] font-bold mb-3'>Contact <span className='text-[#DF4F4F]'>Us</span></p>
@@ -16,7 +16,7 @@ const Contact = () => {
             {/* End Header */}
 
             <div className='grid grid-cols-11'>
-                <div className='col-start-2 col-span-10'>
+                <div className='col-start-2 col-span-10 ml-14 mr-32 '>
                     <p className='text-lg font-bold my-5'>Ways to Contact Me</p>
                     <p>Thank you for visiting my profile. If you have any inquiries, collaboration opportunities, or just want to connect, feel free to reach out. I'm always open to discussions related to [Your Expertise/Interests].</p>
 
