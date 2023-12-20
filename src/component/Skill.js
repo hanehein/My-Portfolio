@@ -5,6 +5,15 @@ import laravel from "../assets/laravel.png"
 import tailwind from "../assets/tailwind.png"
 import vue from "../assets/vue.png"
 import arrow from "../assets/arrow.png"
+import react from "../assets/react.png"
+import node from "../assets/nodejs.png"
+import mongo from "../assets/mongo.png"
+import firebase from "../assets/firebase.png"
+import php from "../assets/php.png"
+import express from "../assets/expres.png"
+import mysql from "../assets/mysql.png"
+import digitalOcean from "../assets/digitalOcean.png"
+
 
 const languages = [
     {
@@ -13,52 +22,58 @@ const languages = [
         knowledge: 90
     },
     {
-        name: "JavaScript",
-        image: javascript,
+        name: "React Js",
+        image: react,
         knowledge: 90
     },
     {
-        name: "JavaScript",
-        image: javascript,
+        name: "Laravel",
+        image: laravel,
         knowledge: 90
     },
     {
-        name: "JavaScript",
-        image: javascript,
+        name: "Node Js",
+        image: node,
         knowledge: 90
     },
     {
-        name: "JavaScript",
-        image: javascript,
+        name: "MongoDB",
+        image: mongo,
         knowledge: 90
     },
     {
-        name: "JavaScript",
-        image: javascript,
+        name: "Firebase",
+        image: firebase,
         knowledge: 90
-    },{
-        name: "JavaScript",
-        image: javascript,
+    },
+    {
+        name: "Tailwind",
+        image: tailwind,
         knowledge: 90
-    },{
-        name: "JavaScript",
-        image: javascript,
+    },
+    {
+        name: "Vue Js",
+        image: vue,
         knowledge: 90
-    },{
-        name: "JavaScript",
-        image: javascript,
+    },
+    {
+        name: "Php",
+        image: php,
         knowledge: 90
-    },{
-        name: "JavaScript",
-        image: javascript,
+    },
+    {
+        name: "Express Js",
+        image: express,
         knowledge: 90
-    },{
-        name: "JavaScript",
-        image: javascript,
+    },
+    {
+        name: "MySQL",
+        image: mysql,
         knowledge: 90
-    },{
-        name: "JavaScript",
-        image: javascript,
+    },
+    {
+        name: "Digital Ocean",
+        image: digitalOcean,
         knowledge: 90
     }
 ];
@@ -78,8 +93,8 @@ const Skill = () => {
             <div className='flex justify-center items-center mt-20'>
                 <div className='w-4/6 grid grid-cols-6 gap-4'>
                     {
-                        languages.map(language => (
-                            <div className='' key={language.name}>
+                        languages.map((language, index) => (
+                            <div key={index}>
                                 <div className='flex justify-center items-start'>
                                     <div className='w-16 h-16 bg-neutral-700 rounded-lg relative mr-2'>
                                         <img src={language.image} className='w-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2' alt={language.image}/>    
