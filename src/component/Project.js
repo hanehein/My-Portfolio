@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProjectDetailModal from "./PojectDetails/ProjectDetailModal";
+import { motion } from "framer-motion";
 // image import
 import myschool1 from "../assets/Projectimg/myschool/myschool1.png";
 import myschool2 from "../assets/Projectimg/myschool/myschool2.png";
@@ -17,6 +18,22 @@ import offlog1 from "../assets/Projectimg/offlog/offlog1.png";
 import offlog2 from "../assets/Projectimg/offlog/offlog2.png";
 import offlog3 from "../assets/Projectimg/offlog/offlog3.png";
 import offloglogo from "../assets/Projectimg/offlog/offlog_logo.png";
+
+const projectVariants = {
+  hide: { x: "200px", opacity: 0},
+  show: { x: 0, opacity: 1, transition: { duration: 0.5}}
+};
+
+const projectRighImageVariants = {
+  hide: { x: "200px", opacity: 0},
+  show: { x: "-100px", opacity: 1, transition: { duration: 0.5, delay: 0.5}}
+}
+
+
+const projectLeftImageVariants = {
+  hide: { x: "200px", opacity: 0},
+  show: { x: "100px", opacity: 1, transition: { duration: 0.5, delay: 0.5}}
+}
 
 const projects = [
   {
@@ -131,7 +148,7 @@ const Project = () => {
                   key={index}
                   onClick={() => modalShowHandler(index)}
                 >
-                  <div className="col-start-2 col-span-5">
+                  <motion.div className="col-start-2 col-span-5" variants={projectVariants} initial="hide" whileInView="show">
                     <p className="text-red-500 tracking-wide">
                       Featured Project
                     </p>
@@ -148,12 +165,12 @@ const Project = () => {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </motion.div>
 
-                  <div className="col-span-6 -translate-x-1/4 relative z-0 hover:z-10">
+                  <motion.div className="col-span-6 -translate-x-1/4 relative z-0 hover:z-10" variants={projectRighImageVariants} initial="hide" whileInView="show">
                     <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
                     <img src={project.image[0]} alt="" />
-                  </div>
+                  </motion.div>
                 </div>
               ) : (
                 <div
@@ -161,12 +178,12 @@ const Project = () => {
                   key={index}
                   onClick={() => modalShowHandler(index)}
                 >
-                  <div className="col-start-1 col-span-6 translate-x-1/4 relative z-0 hover:z-20">
+                  <motion.div className="col-start-1 col-span-6 translate-x-1/4 relative z-0 hover:z-20" variants={projectLeftImageVariants} initial="hide" whileInView="show">
                     <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
                     <img src={project.image[0]} alt="" />
-                  </div>
+                  </motion.div>
 
-                  <div className="col-span-5 text-right">
+                  <motion.div className="col-span-5 text-right" variants={projectVariants} initial="hide" whileInView="show">
                     <p className="text-red-500 tracking-wide">
                       Featured Project
                     </p>
@@ -183,14 +200,14 @@ const Project = () => {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </motion.div>
                 </div>
               )}
             </>
           ))}
         </div>
       </div>
-      {showModal && <ProjectDetailModal projectData={projectData} close={toggleModal} />}
+      {showModal && <ProjectDetailModal showModal={showModal} projectData={projectData} close={toggleModal} />}
     </section>
   );
 };

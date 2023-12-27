@@ -1,10 +1,27 @@
 import React from "react";
 import myschool1 from "../../assets/Projectimg/myschool/myschool1.png";
+import { motion } from "framer-motion";
 
-const ProjectDetailModal = ({ projectData, close }) => {
+const modalVariants = {
+  hide: {
+    scale: 0,
+    opacity: 0,
+  },
+  show: {
+    scale: 1,
+    opacity: 1,
+    transition: { duration: 0.5}
+  },
+  exit: {
+    scale: 0,
+    opacity: 0
+  }
+}
+
+const ProjectDetailModal = ({ showModal, projectData, close }) => {
   console.log(projectData);
   return (
-    <div className="fixed top-0 left-0 bg-black/90 w-full h-full z-50 flex justify-center items-center overflow-y-scroll" style={{ fontFamily: 'Lexend' }}>
+    <motion.div className="fixed top-0 left-0 bg-black/90 w-full h-full z-50 flex justify-center items-center" style={{ fontFamily: 'Lexend' }}  variants={modalVariants} initial="hide" animate="show" exit="exit">
       <div className="w-10/12 h-[90vh] bg-[#232323] p-10 overflow-y-auto relative">
         <div className="w-full flex flex-row items-center space-x-24">
           <div className="w-7/12 rounded-lg overflow-hidden">
@@ -60,7 +77,7 @@ const ProjectDetailModal = ({ projectData, close }) => {
           <p className="text-5xl text-red-500">X</p>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
