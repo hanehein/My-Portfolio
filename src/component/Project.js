@@ -128,87 +128,169 @@ const Project = () => {
     setShowModal((prev) => !prev);
   };
   return (
-    <section className="w-full bg-black text-white">
-      {/* Start Header */}
-      <div className="text-center pt-14 mb-14">
-        <p className="text-[40px] font-bold mb-4">
-          My <span className="text-red-500">Projects</span>
-        </p>
-        <p className="font-bold">Some Things I've Build</p>
+    // <section className="w-full py-20 bg-black text-white">
+    //   {/* Start Header */}
+    //   <div className="text-center mb-14">
+    //     <p className="text-[40px] font-bold mb-4">
+    //       My <span className="text-red-500">Projects</span>
+    //     </p>
+    //     <p className="font-bold">Some Things I've Build</p>
+    //   </div>
+    //   {/* End Header */}
+
+    //   <div className="grid grid-cols-12">
+    //     <div className="col-start-2 col-span-11 mr-20">
+    //       {projects.map((project, index) => (
+    //         <>
+    //           {index % 2 === 0 ? (
+    //             <div
+    //               className="grid grid-cols-12 mb-8 place-items-center cursor-pointer"
+    //               key={index}
+    //               onClick={() => modalShowHandler(index)}
+    //             >
+    //               <motion.div className="col-start-2 col-span-5" variants={projectVariants} initial="hide" whileInView="show">
+    //                 <p className="text-red-500 tracking-wide">
+    //                   Featured Project
+    //                 </p>
+    //                 <p className="text-lg tracking-wide my-3">
+    //                   {project.title}
+    //                 </p>
+    //                 <p className="bg-[#151414] rounded relative z-10 py-4 px-3 mb-2">
+    //                   {project.paragraph}
+    //                 </p>
+    //                 <ul>
+    //                   {project.languages.map((language) => (
+    //                     <li className="inline-block mr-4 bg-[#DF4F4F] px-3 rounded-md">
+    //                       {language}
+    //                     </li>
+    //                   ))}
+    //                 </ul>
+    //               </motion.div>
+
+    //               <motion.div className="col-span-6 -translate-x-1/4 relative z-0 hover:z-10" variants={projectRighImageVariants} initial="hide" whileInView="show">
+    //                 <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
+    //                 <img src={project.image[0]} alt="" />
+    //               </motion.div>
+    //             </div>
+    //           ) : (
+    //             <div
+    //               className="grid grid-cols-12 mb-8 place-items-center cursor-pointer"
+    //               key={index}
+    //               onClick={() => modalShowHandler(index)}
+    //             >
+    //               <motion.div className="col-start-1 col-span-6 translate-x-1/4 relative z-0 hover:z-20" variants={projectLeftImageVariants} initial="hide" whileInView="show">
+    //                 <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
+    //                 <img src={project.image[0]} alt="" />
+    //               </motion.div>
+
+    //               <motion.div className="col-span-5 text-right" variants={projectVariants} initial="hide" whileInView="show">
+    //                 <p className="text-red-500 tracking-wide">
+    //                   Featured Project
+    //                 </p>
+    //                 <p className="text-lg tracking-wide my-3">
+    //                   {project.title}
+    //                 </p>
+    //                 <p className="bg-[#1D1C1C] rounded relative z-10 py-4 px-3 mb-2">
+    //                   {project.paragraph}
+    //                 </p>
+    //                 <ul>
+    //                   {project.languages.map((language) => (
+    //                     <li className="inline-block mr-8 bg-[#DF4F4F] px-3 rounded-md">
+    //                       {language}
+    //                     </li>
+    //                   ))}
+    //                 </ul>
+    //               </motion.div>
+    //             </div>
+    //           )}
+    //         </>
+    //       ))}
+    //     </div>
+    //   </div>
+    //   {showModal && <ProjectDetailModal showModal={showModal} projectData={projectData} close={toggleModal} />}
+    // </section>
+
+    <section className="w-full py-20 bg-black text-white">
+    {/* Start Header */}
+    <div className="text-center mb-14">
+      <p className="text-[40px] font-bold mb-4">
+        My <span className="text-red-500">Projects</span>
+      </p>
+      <p className="font-bold">Some Things I've Build</p>
+    </div>
+    {/* End Header */}
+
+    <div className="w-9/12 mx-auto">
+      <div className="flex flex-col">
+        {projects.map((project, index) => (
+          <>
+            {index % 2 === 0 ? (
+              <div
+                className="flex justify-center mb-8 place-items-center cursor-pointer "
+                key={index}
+                onClick={() => modalShowHandler(index)}
+              >
+                <motion.div className="w-7/12 " variants={projectVariants} initial="hide" whileInView="show">
+                  <p className="text-red-500 tracking-wide">
+                    Featured Project
+                  </p>
+                  <p className="text-lg tracking-wide my-3">
+                    {project.title}
+                  </p>
+                  <p className="bg-[#151414] rounded relative z-10 py-4 px-3 mb-2">
+                    {project.paragraph}
+                  </p>
+                  <ul>
+                    {project.languages.map((language) => (
+                      <li className="inline-block mr-4 bg-[#DF4F4F] px-3 rounded-md">
+                        {language}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+
+                <motion.div className="w-6/12 -translate-x-1/4 relative z-0 " variants={projectRighImageVariants} initial="hide" whileInView="show">
+                  <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
+                  <img src={project.image[0]} alt="" />
+                </motion.div>
+              </div>
+            ) : (
+              <div
+                className="flex justify-end mb-8 place-items-center cursor-pointer"
+                key={index}
+                onClick={() => modalShowHandler(index)}
+              >
+                <motion.div className="w-6/12 translate-x-1/4 relative z-0" variants={projectLeftImageVariants} initial="hide" whileInView="show">
+                  <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
+                  <img src={project.image[0]} alt="" />
+                </motion.div>
+
+                <motion.div className="w-7/12 text-right" variants={projectVariants} initial="hide" whileInView="show">
+                  <p className="text-red-500 tracking-wide">
+                    Featured Project
+                  </p>
+                  <p className="text-lg tracking-wide my-3">
+                    {project.title}
+                  </p>
+                  <p className="bg-[#1D1C1C] rounded relative z-10 py-4 px-3 mb-2">
+                    {project.paragraph}
+                  </p>
+                  <ul>
+                    {project.languages.map((language) => (
+                      <li className="inline-block mr-8 bg-[#DF4F4F] px-3 rounded-md">
+                        {language}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </div>
+            )}
+          </>
+        ))}
       </div>
-      {/* End Header */}
-
-      <div className="grid grid-cols-12">
-        <div className="col-start-2 col-span-11 mr-20">
-          {projects.map((project, index) => (
-            <>
-              {index % 2 === 0 ? (
-                <div
-                  className="grid grid-cols-12 mb-8 place-items-center cursor-pointer"
-                  key={index}
-                  onClick={() => modalShowHandler(index)}
-                >
-                  <motion.div className="col-start-2 col-span-5" variants={projectVariants} initial="hide" whileInView="show">
-                    <p className="text-red-500 tracking-wide">
-                      Featured Project
-                    </p>
-                    <p className="text-lg tracking-wide my-3">
-                      {project.title}
-                    </p>
-                    <p className="bg-[#151414] rounded relative z-10 py-4 px-3 mb-2">
-                      {project.paragraph}
-                    </p>
-                    <ul>
-                      {project.languages.map((language) => (
-                        <li className="inline-block mr-4 bg-[#DF4F4F] px-3 rounded-md">
-                          {language}
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-
-                  <motion.div className="col-span-6 -translate-x-1/4 relative z-0 hover:z-10" variants={projectRighImageVariants} initial="hide" whileInView="show">
-                    <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
-                    <img src={project.image[0]} alt="" />
-                  </motion.div>
-                </div>
-              ) : (
-                <div
-                  className="grid grid-cols-12 mb-8 place-items-center cursor-pointer"
-                  key={index}
-                  onClick={() => modalShowHandler(index)}
-                >
-                  <motion.div className="col-start-1 col-span-6 translate-x-1/4 relative z-0 hover:z-20" variants={projectLeftImageVariants} initial="hide" whileInView="show">
-                    <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
-                    <img src={project.image[0]} alt="" />
-                  </motion.div>
-
-                  <motion.div className="col-span-5 text-right" variants={projectVariants} initial="hide" whileInView="show">
-                    <p className="text-red-500 tracking-wide">
-                      Featured Project
-                    </p>
-                    <p className="text-lg tracking-wide my-3">
-                      {project.title}
-                    </p>
-                    <p className="bg-[#1D1C1C] rounded relative z-10 py-4 px-3 mb-2">
-                      {project.paragraph}
-                    </p>
-                    <ul>
-                      {project.languages.map((language) => (
-                        <li className="inline-block mr-8 bg-[#DF4F4F] px-3 rounded-md">
-                          {language}
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                </div>
-              )}
-            </>
-          ))}
-        </div>
-      </div>
-      {showModal && <ProjectDetailModal showModal={showModal} projectData={projectData} close={toggleModal} />}
-    </section>
+    </div>
+    {showModal && <ProjectDetailModal showModal={showModal} projectData={projectData} close={toggleModal} />}
+  </section>
   );
 };
 
