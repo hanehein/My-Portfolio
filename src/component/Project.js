@@ -1,6 +1,17 @@
 import React, { useState } from "react";
 import ProjectDetailModal from "./PojectDetails/ProjectDetailModal";
 import { motion } from "framer-motion";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+import "../style/swiper.css";
+
+// import required modules
+import { Pagination } from "swiper/modules";
 // image import
 import myschool1 from "../assets/Projectimg/myschool/myschool1.png";
 import myschool2 from "../assets/Projectimg/myschool/myschool2.png";
@@ -20,20 +31,19 @@ import offlog3 from "../assets/Projectimg/offlog/offlog3.png";
 import offloglogo from "../assets/Projectimg/offlog/offlog_logo.png";
 
 const projectVariants = {
-  hide: { x: "200px", opacity: 0},
-  show: { x: 0, opacity: 1, transition: { duration: 0.5}}
+  hide: { x: "200px", opacity: 0 },
+  show: { x: 0, opacity: 1, transition: { duration: 0.5 } },
 };
 
 const projectRighImageVariants = {
-  hide: { x: "200px", opacity: 0},
-  show: { x: "-100px", opacity: 1, transition: { duration: 0.5, delay: 0.5}}
-}
-
+  hide: { x: "200px", opacity: 0 },
+  show: { x: "-100px", opacity: 1, transition: { duration: 0.5, delay: 0.5 } },
+};
 
 const projectLeftImageVariants = {
-  hide: { x: "200px", opacity: 0},
-  show: { x: "100px", opacity: 1, transition: { duration: 0.5, delay: 0.5}}
-}
+  hide: { x: "200px", opacity: 0 },
+  show: { x: "100px", opacity: 1, transition: { duration: 0.5, delay: 0.5 } },
+};
 
 const projects = [
   {
@@ -119,6 +129,14 @@ const Project = () => {
   const [projectData, setProjectData] = useState();
   const [showModal, setShowModal] = useState(false);
 
+  const pagination = {
+    clickable: true,
+    el: ".swiper-pagination",
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
+  };
+
   const modalShowHandler = (index) => {
     toggleModal();
     setProjectData((prev) => (prev = projects[index]));
@@ -128,169 +146,166 @@ const Project = () => {
     setShowModal((prev) => !prev);
   };
   return (
-    // <section className="w-full py-20 bg-black text-white">
-    //   {/* Start Header */}
-    //   <div className="text-center mb-14">
-    //     <p className="text-[40px] font-bold mb-4">
-    //       My <span className="text-red-500">Projects</span>
-    //     </p>
-    //     <p className="font-bold">Some Things I've Build</p>
-    //   </div>
-    //   {/* End Header */}
-
-    //   <div className="grid grid-cols-12">
-    //     <div className="col-start-2 col-span-11 mr-20">
-    //       {projects.map((project, index) => (
-    //         <>
-    //           {index % 2 === 0 ? (
-    //             <div
-    //               className="grid grid-cols-12 mb-8 place-items-center cursor-pointer"
-    //               key={index}
-    //               onClick={() => modalShowHandler(index)}
-    //             >
-    //               <motion.div className="col-start-2 col-span-5" variants={projectVariants} initial="hide" whileInView="show">
-    //                 <p className="text-red-500 tracking-wide">
-    //                   Featured Project
-    //                 </p>
-    //                 <p className="text-lg tracking-wide my-3">
-    //                   {project.title}
-    //                 </p>
-    //                 <p className="bg-[#151414] rounded relative z-10 py-4 px-3 mb-2">
-    //                   {project.paragraph}
-    //                 </p>
-    //                 <ul>
-    //                   {project.languages.map((language) => (
-    //                     <li className="inline-block mr-4 bg-[#DF4F4F] px-3 rounded-md">
-    //                       {language}
-    //                     </li>
-    //                   ))}
-    //                 </ul>
-    //               </motion.div>
-
-    //               <motion.div className="col-span-6 -translate-x-1/4 relative z-0 hover:z-10" variants={projectRighImageVariants} initial="hide" whileInView="show">
-    //                 <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
-    //                 <img src={project.image[0]} alt="" />
-    //               </motion.div>
-    //             </div>
-    //           ) : (
-    //             <div
-    //               className="grid grid-cols-12 mb-8 place-items-center cursor-pointer"
-    //               key={index}
-    //               onClick={() => modalShowHandler(index)}
-    //             >
-    //               <motion.div className="col-start-1 col-span-6 translate-x-1/4 relative z-0 hover:z-20" variants={projectLeftImageVariants} initial="hide" whileInView="show">
-    //                 <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
-    //                 <img src={project.image[0]} alt="" />
-    //               </motion.div>
-
-    //               <motion.div className="col-span-5 text-right" variants={projectVariants} initial="hide" whileInView="show">
-    //                 <p className="text-red-500 tracking-wide">
-    //                   Featured Project
-    //                 </p>
-    //                 <p className="text-lg tracking-wide my-3">
-    //                   {project.title}
-    //                 </p>
-    //                 <p className="bg-[#1D1C1C] rounded relative z-10 py-4 px-3 mb-2">
-    //                   {project.paragraph}
-    //                 </p>
-    //                 <ul>
-    //                   {project.languages.map((language) => (
-    //                     <li className="inline-block mr-8 bg-[#DF4F4F] px-3 rounded-md">
-    //                       {language}
-    //                     </li>
-    //                   ))}
-    //                 </ul>
-    //               </motion.div>
-    //             </div>
-    //           )}
-    //         </>
-    //       ))}
-    //     </div>
-    //   </div>
-    //   {showModal && <ProjectDetailModal showModal={showModal} projectData={projectData} close={toggleModal} />}
-    // </section>
-
-    <section className="w-full py-20 bg-black text-white">
-    {/* Start Header */}
-    <div className="text-center mb-14">
-      <p className="text-[40px] font-bold mb-4">
-        My <span className="text-red-500">Projects</span>
-      </p>
-      <p className="font-bold">Some Things I've Build</p>
-    </div>
-    {/* End Header */}
-
-    <div className="w-9/12 mx-auto">
-      <div className="flex flex-col">
-        {projects.map((project, index) => (
-          <>
-            {index % 2 === 0 ? (
-              <div
-                className="flex justify-center mb-8 place-items-center cursor-pointer "
-                key={index}
-                onClick={() => modalShowHandler(index)}
-              >
-                <motion.div className="w-7/12 " variants={projectVariants} initial="hide" whileInView="show">
-                  <p className="text-red-500 tracking-wide">
-                    Featured Project
-                  </p>
-                  <p className="text-lg tracking-wide my-3">
-                    {project.title}
-                  </p>
-                  <p className="bg-[#151414] rounded relative z-10 py-4 px-3 mb-2">
-                    {project.paragraph}
-                  </p>
-                  <ul>
-                    {project.languages.map((language) => (
-                      <li className="inline-block mr-4 bg-[#DF4F4F] px-3 rounded-md">
-                        {language}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-
-                <motion.div className="w-6/12 -translate-x-1/4 relative z-0 " variants={projectRighImageVariants} initial="hide" whileInView="show">
-                  <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
-                  <img src={project.image[0]} alt="" />
-                </motion.div>
-              </div>
-            ) : (
-              <div
-                className="flex justify-end mb-8 place-items-center cursor-pointer"
-                key={index}
-                onClick={() => modalShowHandler(index)}
-              >
-                <motion.div className="w-6/12 translate-x-1/4 relative z-0" variants={projectLeftImageVariants} initial="hide" whileInView="show">
-                  <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
-                  <img src={project.image[0]} alt="" />
-                </motion.div>
-
-                <motion.div className="w-7/12 text-right" variants={projectVariants} initial="hide" whileInView="show">
-                  <p className="text-red-500 tracking-wide">
-                    Featured Project
-                  </p>
-                  <p className="text-lg tracking-wide my-3">
-                    {project.title}
-                  </p>
-                  <p className="bg-[#1D1C1C] rounded relative z-10 py-4 px-3 mb-2">
-                    {project.paragraph}
-                  </p>
-                  <ul>
-                    {project.languages.map((language) => (
-                      <li className="inline-block mr-8 bg-[#DF4F4F] px-3 rounded-md">
-                        {language}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              </div>
-            )}
-          </>
-        ))}
+    <section className="w-full py-20 bg-black text-white" id="project">
+      {/* Start Header */}
+      <div className="md:text-center md:w-full w-11/12 mx-auto md:mb-14 mb-6">
+        <p className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-bold mb-4">
+          My <span className="text-red-500">Projects</span>
+        </p>
+        <p className="font-bold">Some Things I've Build</p>
       </div>
-    </div>
-    {showModal && <ProjectDetailModal showModal={showModal} projectData={projectData} close={toggleModal} />}
-  </section>
+      {/* End Header */}
+
+      <div className="lg:w-10/12 md:w-11/12 w-11/12 mx-auto">
+        <div className="md:flex flex-col hidden">
+          {projects.map((project, index) => (
+            <>
+              {index % 2 === 0 ? (
+                <div
+                  className="flex justify-center mb-8 place-items-center cursor-pointer "
+                  key={index}
+                  onClick={() => modalShowHandler(index)}
+                >
+                  <motion.div
+                    className="w-7/12 "
+                    variants={projectVariants}
+                    initial="hide"
+                    whileInView="show"
+                  >
+                    <p className="text-red-500 tracking-wide">
+                      Featured Project
+                    </p>
+                    <p className="lg:text-lg text-base tracking-wide my-3">
+                      {project.title}
+                    </p>
+                    <p className="bg-[#151414] lg:text-base text-sm rounded relative z-10 py-4 px-3 mb-2">
+                      {project.paragraph}
+                    </p>
+                    <ul>
+                      {project.languages.map((language) => (
+                        <li
+                          className="inline-block mr-4 bg-[#DF4F4F] px-3 rounded-md z-20"
+                          key={language}
+                        >
+                          {language}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+
+                  <motion.div
+                    className="w-6/12 -translate-x-1/4 relative z-0 "
+                    variants={projectRighImageVariants}
+                    initial="hide"
+                    whileInView="show"
+                  >
+                    <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
+                    <img src={project.image[0]} alt="projectimg" />
+                  </motion.div>
+                </div>
+              ) : (
+                <div
+                  className="flex lg:justify-end mb-8 place-items-center cursor-pointer"
+                  key={index}
+                  onClick={() => modalShowHandler(index)}
+                >
+                  <motion.div
+                    className="w-6/12 lg:translate-x-1/4 relative z-0 "
+                    variants={projectLeftImageVariants}
+                    initial="hide"
+                    whileInView="show"
+                  >
+                    <div className="w-full h-full bg-black/50 hover:bg-transparent absolute left-0"></div>
+                    <img src={project.image[0]} alt="projectimg" />
+                  </motion.div>
+
+                  <motion.div
+                    className="w-7/12 text-right"
+                    variants={projectVariants}
+                    initial="hide"
+                    whileInView="show"
+                  >
+                    <p className="text-red-500 tracking-wide">
+                      Featured Project
+                    </p>
+                    <p className="lg:text-lg text-base tracking-wide my-3">
+                      {project.title}
+                    </p>
+                    <p className="bg-[#1D1C1C] rounded lg:text-base text-sm  relative z-10 py-4 px-3 mb-2">
+                      {project.paragraph}
+                    </p>
+                    <ul className=" flex justify-end space-x-4">
+                      {project.languages.map((language) => (
+                        <li
+                          className="inline-block  bg-[#DF4F4F] px-3 rounded-md "
+                          key={language}
+                        >
+                          {language}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                </div>
+              )}
+            </>
+          ))}
+        </div>
+
+        <div className="md:hidden flex">
+          <Swiper
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            spaceBetween={50}
+            className="mySwiper"
+          >
+            {projects.map((project, index) => (
+              <SwiperSlide>
+                <div>
+                  <p className="text-red-500 tracking-wide ">
+                    Featured Project
+                  </p>
+                  <p className="mt-1">
+                    {project.title} - {project.subTitle}
+                  </p>
+                  <p className="mt-2 text-white/50 sm:text-base text-sm">
+                    {project.paragraph}
+                  </p>
+                  <div
+                    className=" lg:translate-x-1/4 relative z-0 mt-4 "
+                    variants={projectLeftImageVariants}
+                    initial="hide"
+                    whileInView="show"
+                  >
+                    <div className="w-full h-full bg-[#C1BDBD]/30 hover:bg-transparent absolute left-0 flex justify-center items-center">
+                      <button
+                        className="text-sm font-bold bg-red-500 p-1 px-2 rounded-lg"
+                        onClick={() => modalShowHandler(index)}
+                      >
+                        View Detail
+                      </button>
+                    </div>
+                    <img
+                      src={project.image[0]}
+                      alt="projectimg"
+                      className="mb-10 "
+                    />
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+      {showModal && (
+        <ProjectDetailModal
+          showModal={showModal}
+          projectData={projectData}
+          close={toggleModal}
+        />
+      )}
+    </section>
   );
 };
 
