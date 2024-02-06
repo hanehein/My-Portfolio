@@ -18,7 +18,7 @@ const Nav = () => {
   };
 
   useEffect(() => {
-    // console.log(Events.scrollEvent);
+    
     Events.scrollEvent.register("begin", function (to, element) {
       // Do something when scrolling begins
     });
