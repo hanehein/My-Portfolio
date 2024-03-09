@@ -11,7 +11,7 @@ const modalVariants = {
     scale: 1,
     opacity: 1,
     transition: { duration: 0.5}
-  },
+  },  
   exit: {
     scale: 0,
     opacity: 0
@@ -19,7 +19,7 @@ const modalVariants = {
 }
 
 const ProjectDetailModal = ({ showModal, projectData, close }) => {
-  console.log(projectData);
+  // console.log(projectData);
   return (
     <motion.div className="fixed top-0 left-0 bg-black/90 w-full h-full z-50 flex justify-center items-center" style={{ fontFamily: 'Lexend' }}  variants={modalVariants} initial="hide" animate="show" exit="exit">
       <div className="lg:w-10/12 w-11/12 h-[90vh] bg-[#232323] lg:p-18 md:p-12 sm:p-10 p-6 overflow-y-auto relative">
