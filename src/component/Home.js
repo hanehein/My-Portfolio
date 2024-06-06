@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../style/home.module.css";
 import logo from "../assets/heinlogo.png";
 import git from "../assets/github.png";
@@ -9,38 +9,60 @@ import vector from "../assets/Vector.png";
 import { motion } from "framer-motion";
 import DownloadPDF from "./DownloadPDF";
 
-const homeVariants = {
-  hide: {
-    x: "100%",
-    opacity: 0,
-  },
-  show: {
-    x: "30%",
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      delayChildren: 0.5,
-      staggerChildren: 0.8,
-      when: "beforeChildren",
-    },
-  },
-};
 
-const dataVariants = {
-  hide: {
-    x: "50%",
-    opacity: 0,
-  },
-  show: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.5 },
-  },
-};
 
 const Home = () => {
+  const [xValue, setXValue] = useState('30%');
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 640) { // Tailwind's sm breakpoint
+        setXValue('15%');
+      } else {
+        setXValue('30%');
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    
+    // Initial check
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const homeVariants = {
+    hide: {
+      x: "100%",
+      opacity: 0,
+    },
+    show: {
+      x: xValue,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        delayChildren: 0.5,
+        staggerChildren: 0.8,
+        when: "beforeChildren",
+      },
+    },
+  };
+  
+  const dataVariants = {
+    hide: {
+      x: "50%",
+      opacity: 0,
+    },
+    show: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.5 },
+    },
+  };
   return (
-    <section className={`'w-full h-screen ${styles.homes}`} id="home">
+    <section className={`'w-screen h-screen ${styles.homes}`} id="home">
       <div className="w-full h-full bg-black opacity-80 text-white relative">
         {/* Start Header */}
         <div className="flex justify-between items-center pt-8">
@@ -51,7 +73,7 @@ const Home = () => {
         </div>
         {/* End Header */}
 
-      <div className=" w-full h-full absolute z-[-10] top-0 left-0 flex items-center">
+      <div className=" w-screen h-screen absolute z-[-10] top-0 left-0 flex items-center">
         <motion.div
           className="lg:ml-10"
           variants={homeVariants}
