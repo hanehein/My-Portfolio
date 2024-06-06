@@ -129,13 +129,13 @@ const Project = () => {
   const [projectData, setProjectData] = useState();
   const [showModal, setShowModal] = useState(false);
 
-  const pagination = {
-    clickable: true,
-    el: ".swiper-pagination",
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
-  };
+  // const pagination = {
+  //   clickable: true,
+  //   el: ".swiper-pagination",
+  //   renderBullet: function (index, className) {
+  //     return '<span class="' + className + '">' + (index + 1) + "</span>";
+  //   },
+  // };
 
   const modalShowHandler = (index) => {
     toggleModal();

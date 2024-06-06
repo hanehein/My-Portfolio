@@ -1,5 +1,4 @@
 import React from "react";
-import myschool1 from "../../assets/Projectimg/myschool/myschool1.png";
 import { motion } from "framer-motion";
 
 const modalVariants = {
