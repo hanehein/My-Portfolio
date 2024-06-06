@@ -4,9 +4,7 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import {
   Link,
-  Element,
   Events,
-  animateScroll as scroll,
   scrollSpy,
 } from "react-scroll";
 
