@@ -178,7 +178,7 @@ const Skill = () => {
         <div className="lg:w-5/6 md:w-11/12 grid md:grid-cols-5 sm:grid-cols-4 grid-cols-2 md:gap-4 sm:gap-10 gap-10 ">
           {languages.map((language, index) => (
             <>
-              {categories == language.group && (
+              {categories === language.group && (
                 <div key={index}>
                   <div className="flex justify-center items-start">
                     <div className="w-16 h-16 bg-neutral-700 rounded-lg relative mr-2">
