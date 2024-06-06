@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/My-Portfolio/static/css/main.68bcc64a.css",
+    "main.js": "/My-Portfolio/static/js/main.feacf41c.js",
+    "static/media/wallpaper 2.png": "/My-Portfolio/static/media/wallpaper 2.8dac5d6d60f120923a1a.png",
+    "static/media/shark1.png": "/My-Portfolio/static/media/shark1.785c9cde318bf25fdf1c.png",
+    "static/media/myschool1.png": "/My-Portfolio/static/media/myschool1.0f97f2afc42129061d60.png",
+    "static/media/shark2.png": "/My-Portfolio/static/media/shark2.9c58f762b36ba6522a26.png",
+    "static/media/profile.png": "/My-Portfolio/static/media/profile.f64a276468938df041a3.png",
+    "static/media/bridge1.png": "/My-Portfolio/static/media/bridge1.fa0b5e9f1809ddd5a61b.png",
+    "static/media/offlog3.png": "/My-Portfolio/static/media/offlog3.c721bfde41710338331c.png",
+    "static/media/offlog1.png": "/My-Portfolio/static/media/offlog1.18010bd337366cafa59d.png",
+    "static/media/bridge2.png": "/My-Portfolio/static/media/bridge2.5ab3c6c43fd989c553c6.png",
+    "static/media/sharktopsun_logo.png": "/My-Portfolio/static/media/sharktopsun_logo.88080c971a715c4e54b1.png",
+    "static/media/shark3.png": "/My-Portfolio/static/media/shark3.01d42060c0640938bde1.png",
+    "static/media/myschool2.png": "/My-Portfolio/static/media/myschool2.cf684690393b2f8210f9.png",
+    "static/media/offlog2.png": "/My-Portfolio/static/media/offlog2.a7227f2185eb7f37804f.png",
+    "static/media/myschool3.png": "/My-Portfolio/static/media/myschool3.3599fcce2b26eb60e0cc.png",
+    "static/media/bridge3.png": "/My-Portfolio/static/media/bridge3.fc65a40cc967e19965f8.png",
+    "static/media/contact.png": "/My-Portfolio/static/media/contact.36cd5ea58ce8961174d4.png",
+    "static/media/myschool_logo.png": "/My-Portfolio/static/media/myschool_logo.b05ffb0b0e6b00e64bf8.png",
+    "static/media/offlog_logo.png": "/My-Portfolio/static/media/offlog_logo.472dcbce2909b4185c70.png",
+    "index.html": "/My-Portfolio/index.html",
+    "main.68bcc64a.css.map": "/My-Portfolio/static/css/main.68bcc64a.css.map",
+    "main.feacf41c.js.map": "/My-Portfolio/static/js/main.feacf41c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68bcc64a.css",
+    "static/js/main.feacf41c.js"
+  ]
+}
