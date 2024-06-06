@@ -6,7 +6,6 @@ import facebook from "../assets/facebook.png";
 import instgram from "../assets/instgram.png";
 import { motion } from "framer-motion";
 import task from "../assets/task.png";
-import DownloadPDF from "./DownloadPDF";
 
 const aboutVariants = {
   hide: {
@@ -126,17 +125,12 @@ const About = () => {
           </motion.p>
 
           {/* <div className='w-full flex justify-center items-center'> */}
-          {/* <motion.button
+          <motion.button
             className="w-full bg-red-500 text-white tracking-wide rounded mt-10 py-2 lg:text-lg sm:text-base"
             variants={aboutItemVariants}
           >
             Download Resume
-          </motion.button> */}
-          <motion.div className="w-full"  variants={aboutItemVariants}>
-          <DownloadPDF className="w-full bg-red-500 text-white tracking-wide rounded mt-10 py-2 lg:text-lg sm:text-base">
-            
-          </DownloadPDF>
-          </motion.div>
+          </motion.button>
           {/* </div> */}
         </motion.div>
         {/* End About */}

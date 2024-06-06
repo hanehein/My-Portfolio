@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import javascript from "../assets/javascript.png";
 import styles from "../style/skill.module.css";
 import laravel from "../assets/laravel.png";
@@ -18,73 +18,73 @@ const languages = [
   {
     name: "JavaScript",
     image: javascript,
-    knowledge: 80,
+    knowledge: 90,
     group: "1",
   },
   {
     name: "React Js",
     image: react,
-    knowledge: 80,
+    knowledge: 90,
     group: "1",
   },
   {
     name: "Laravel",
     image: laravel,
-    knowledge: 80,
+    knowledge: 90,
     group: "2",
   },
   {
     name: "Node Js",
     image: node,
-    knowledge: 60,
+    knowledge: 90,
     group: "2",
   },
   {
     name: "MongoDB",
     image: mongo,
-    knowledge: 60,
+    knowledge: 90,
     group: "3",
   },
   {
     name: "Firebase",
     image: firebase,
-    knowledge: 40,
+    knowledge: 90,
     group: "3",
   },
   {
     name: "Tailwind",
     image: tailwind,
-    knowledge: 80,
+    knowledge: 90,
     group: "1",
   },
   {
     name: "Vue Js",
     image: vue,
-    knowledge: 80,
+    knowledge: 90,
     group: "1",
   },
   {
     name: "Php",
     image: php,
-    knowledge: 80,
+    knowledge: 90,
     group: "2",
   },
   {
     name: "Express Js",
     image: express,
-    knowledge: 60,
+    knowledge: 90,
     group: "2",
   },
   {
     name: "MySQL",
     image: mysql,
-    knowledge: 80,
+    knowledge: 90,
     group: "3",
   },
   {
     name: "Digital Ocean",
     image: digitalOcean,
-    knowledge: 40,
+    knowledge: 90,
     group: "3",
   },
 ];
@@ -95,25 +95,6 @@ const Skill = () => {
   const categoryHandler = (num) => {
     setCategories(num);
   };
-
-  useEffect(() => {
-    languages.forEach((language, langIndex) => {
-      const bars = document.querySelectorAll(`.bars-container-${langIndex} .bar`);
-      const totalBars = bars.length;
-      const filledBars = Math.round((language.knowledge / 100) * totalBars);
-
-      bars.forEach((bar, index) => {
-        if (index >= totalBars - filledBars) {
-          bar.classList.add('bg-[#DF4F4F]');
-          bar.classList.remove('bg-white');
-        } else {
-          bar.classList.add('bg-white');
-          bar.classList.remove('bg-[#DF4F4F]');
-        }
-      });
-    });
-  }, [categories]);
-
   return (
     <section className="w-full py-20 bg-black/90 text-white" id="skill">
       {/* Start Header */}
@@ -194,12 +175,12 @@ const Skill = () => {
                         {language.knowledge} %
                       </span>
 
-                      <div id={`bars-container-${index}`} className={`bars-container-${index}`}>
-                        <div className="bar w-[15px] h-[3px] rounded-lg mb-1 mx-auto"></div>
-                        <div className="bar w-[15px] h-[3px] rounded-lg mb-1 mx-auto"></div>
-                        <div className="bar w-[15px] h-[3px] rounded-lg mb-1 mx-auto"></div>
-                        <div className="bar w-[15px] h-[3px] rounded-lg mb-1 mx-auto"></div>
-                        <div className="bar w-[15px] h-[3px] rounded-lg mb-1 mx-auto"></div>
+                      <div>
+                        <div className="w-[15px] h-[3px] bg-white rounded-lg mb-1 mx-auto"></div>
+                        <div className="w-[15px] h-[3px] bg-[#DF4F4F] rounded-lg mb-1 mx-auto"></div>
+                        <div className="w-[15px] h-[3px] bg-[#DF4F4F] rounded-lg mb-1 mx-auto"></div>
+                        <div className="w-[15px] h-[3px] bg-[#DF4F4F] rounded-lg mb-1 mx-auto"></div>
+                        <div className="w-[15px] h-[3px] bg-[#DF4F4F] rounded-lg mb-1 mx-auto"></div>
                       </div>
                     </div>
                   </div>
@@ -226,12 +207,12 @@ const Skill = () => {
                        <div className={styles.knowledgePercentage}>
                          <span className="text-[10px]">{language.knowledge} %</span>
        
-                         <div id={`bars-container-${index}`} className={`bars-container-${index}`}>
-                           <div className="bar w-[15px] h-[3px]  rounded-lg mb-1 mx-auto"></div>
-                           <div className="bar w-[15px] h-[3px] rounded-lg mb-1 mx-auto"></div>
-                           <div className="bar w-[15px] h-[3px] rounded-lg mb-1 mx-auto"></div>
-                           <div className="bar w-[15px] h-[3px] rounded-lg mb-1 mx-auto"></div>
-                           <div className="bar w-[15px] h-[3px] rounded-lg mb-1 mx-auto"></div>
+                         <div>
+                           <div className="w-[15px] h-[3px] bg-white rounded-lg mb-1 mx-auto"></div>
+                           <div className="w-[15px] h-[3px] bg-[#DF4F4F] rounded-lg mb-1 mx-auto"></div>
+                           <div className="w-[15px] h-[3px] bg-[#DF4F4F] rounded-lg mb-1 mx-auto"></div>
+                           <div className="w-[15px] h-[3px] bg-[#DF4F4F] rounded-lg mb-1 mx-auto"></div>
+                           <div className="w-[15px] h-[3px] bg-[#DF4F4F] rounded-lg mb-1 mx-auto"></div>
                          </div>
                        </div>
                      </div>
