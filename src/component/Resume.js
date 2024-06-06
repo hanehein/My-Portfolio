@@ -3,14 +3,14 @@ import { motion } from 'framer-motion'
 
 const  workData = [
     {
-        year: "2022 ~ Present",
+        year: "2022 ~ 2024",
         header: "Software Developer",
         semiHeader: "Exbrain Technology Co. ltd, Myanmar",
         param: "Exbrain Technology is a leading software house specializing in Website Development, Mobile Development and Website Hosting.",
     },
     {
         year: "2021 ~ 2023",
-        header: "HR Management Software",
+        header: "Software Developer",
         semiHeader: "Exbrain Education, Myanmar",
         param: "Exbrain Education is a training center that functions as a school for students, offering comprehensive instruction in various areas of software development, including Java, JavaScript, PHP, Laravel, Vue, and more.",
     }
@@ -18,13 +18,13 @@ const  workData = [
 
 const  schoolData = [
     {
-        year: "2021 ~ 2023",
+        year: "2019 ~ 2020",
         header: "BSc (Hons) Information Technology",
         param: "Management Development Institute, Singapore (MDIS)",
         courses: ["Project Management", "Client Focused Business Solutions", "ICT Service Management", "Emerging Database Technologies"]
     },
     {
-        year: "2021 ~ 2023",
+        year: "2017 ~ 2019",
         header: "Pearson BTEC Level 5 HND Diploma",
         param: "YOUTH International University, Myanmar",
         courses: ["Project Design", "Networking Infrastructure", "Internet Server Management", "Managing Software Project"]

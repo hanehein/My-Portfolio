@@ -7,6 +7,7 @@ import facebook from "../assets/facebook.png";
 import instgram from "../assets/instgram.png";
 import vector from "../assets/Vector.png";
 import { motion } from "framer-motion";
+import DownloadPDF from "./DownloadPDF";
 
 const homeVariants = {
   hide: {
@@ -42,15 +43,15 @@ const Home = () => {
     <section className={`'w-full h-screen ${styles.homes}`} id="home">
       <div className="w-full h-full bg-black opacity-80 text-white relative">
         {/* Start Header */}
-        <div className="flex justify-between items-center pt-8">
+        <div className="flex justify-between items-center pt-8 z-50">
           <img src={logo} className="lg:w-20 sm:w-18 w-16 lg:h-7 sm:h-6 h-5  lg:ml-16 md:ml-12 sm:ml-10 ml-6" alt="logo" />
-          <button className="bg-red-600 text-white rounded lg:text-base sm:text-sm text-sm px-5 py-2 lg:mr-16 md:mr-12 sm:mr-10 mr-6">
-            Download Resume
-          </button>
+          <DownloadPDF className="bg-red-600 cursor-pointer text-white rounded lg:text-base sm:text-sm text-sm px-5 py-2 lg:mr-16 md:mr-12 sm:mr-10 mr-6">
+            
+          </DownloadPDF>
         </div>
         {/* End Header */}
 
-      <div className=" w-full h-full absolute top-0 left-0 flex items-center">
+      <div className=" w-full h-full absolute z-[-10] top-0 left-0 flex items-center">
         <motion.div
           className="lg:ml-10"
           variants={homeVariants}
