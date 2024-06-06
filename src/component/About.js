@@ -48,7 +48,7 @@ const About = () => {
           <div className="w-2/3 h-2/3 bg-[#2F2A2A] rounded-lg absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"></div>
           <img
             src={profile}
-            className="-translate-y-20 relative z-20"
+            className="md:-translate-y-20 -translate-y-10 relative z-20"
             alt="profile"
           />
         </motion.div>
