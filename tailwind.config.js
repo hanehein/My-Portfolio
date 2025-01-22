@@ -7,6 +7,9 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
+  variants: {
+    scrollbar: ['rounded'], // Optional: Add variants for rounded scrollbars
+  },
 }
 

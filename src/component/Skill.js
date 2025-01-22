@@ -13,6 +13,8 @@ import php from "../assets/php.png";
 import express from "../assets/expres.png";
 import mysql from "../assets/mysql.png";
 import digitalOcean from "../assets/digitalOcean.png";
+import graphql from "../assets/logos_graphql.png";
+
 
 const languages = [
   {
@@ -30,7 +32,7 @@ const languages = [
   {
     name: "Laravel",
     image: laravel,
-    knowledge: 70,
+    knowledge: 60,
     group: 2,
   },
   {
@@ -85,6 +87,12 @@ const languages = [
     name: "Digital Ocean",
     image: digitalOcean,
     knowledge: 40,
+    group: 3,
+  },
+  {
+    name: "Graphql",
+    image: graphql,
+    knowledge: 60,
     group: 3,
   },
 ];
