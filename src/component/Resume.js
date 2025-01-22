@@ -92,7 +92,7 @@ const Resume = () => {
         {/* Start Experience */}
         <div className="flex lg:flex-row flex-col w-11/12 mx-auto justify-center mt-10 lg:space-x-6">
           {/* start education */}
-          <div className="lg:w-6/12 lg:pl-8 lg:mb-0 mb-6 h-[450px] overflow-y-auto scrollbar-thin scrollbar-thumb-red-500 scrollbar-track-gray-800 ">
+          <div className="lg:w-6/12 lg:pl-8 lg:mb-0 mb-6 h-[450px] overflow-y-auto ">
             <div>
               <motion.p
                 className="text-lg font-bold tracking-wide"
@@ -108,7 +108,7 @@ const Resume = () => {
                   className="w-full flex lg:mt-10 mt-4"
                   key={w.header}
                   variants={ExperienceVariants}
-                  initial="hide"
+                  initial="show"
                   whileInView="show"
                 >
                   <motion.div
@@ -133,7 +133,7 @@ const Resume = () => {
           {/* end education */}
           <hr className="mx-24" />
           {/* start work */}
-          <div className="lg:w-6/12 lg:mt-0 mt-6 h-[450px] overflow-y-auto scrollbar-thin scrollbar-thumb-red-500 scrollbar-track-gray-800">
+          <div className="lg:w-6/12 lg:mt-0 mt-6 h-[450px] overflow-y-auto">
             <div className="">
               <motion.p
                 className="text-xl font-bold tracking-wide"
@@ -148,7 +148,7 @@ const Resume = () => {
                   className="w-full flex lg:mt-10 mt-4"
                   key={w.header}
                   variants={ExperienceVariants}
-                  initial="hide"
+                  initial="show"
                   whileInView="show"
                 >
                   <motion.div
